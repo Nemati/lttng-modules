@@ -36,7 +36,7 @@ DEFINE_TRACE(addons_icmp_send);
 static int
 lttng_vhost_probe(struct sk_buff *skb_in, int type, int code, __be32 info)
 {
-    printk("lttng_vhost_probe\n");
+    printk("lttng_vhos_probe\n");
     trace_addons_icmp_send(skb_in, type, code, info);
 	jprobe_return();
 	return 0;

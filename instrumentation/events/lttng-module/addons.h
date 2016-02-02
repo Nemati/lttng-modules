@@ -8,7 +8,8 @@
 #include <linux/tcp.h>
 #include <net/sock.h>
 #include <linux/blkdev.h>
-
+#include <linux/virtio.h>
+#include <linux/vhost.h>
 LTTNG_TRACEPOINT_EVENT_CLASS(inet_sock_local_template,
 	TP_PROTO(struct sock *sk, struct tcphdr *tcph),
 	TP_ARGS(sk, tcph),
@@ -73,14 +74,15 @@ LTTNG_TRACEPOINT_EVENT(addons_elv_merge_requests,
     )
 )
 
-LTTNG_TRACEPOINT_EVENT(addons_icmp_send,
-    TP_PROTO(struct sk_buff *skb_in, int type, int code, __be32 info),
-    TP_ARGS(skb_in, type, code, info),
+
+LTTNG_TRACEPOINT_EVENT(addons_vcpu_enter_guest,
+    TP_PROTO(unsigned int vcpuID,ulong cr3tmp, unsigned long sptmp,unsigned long iptmp),
+    TP_ARGS(vcpuID,cr3tmp, sptmp, iptmp),
     TP_FIELDS(
-        ctf_integer_hex(struct sock *, skb_in, skb_in)
-        ctf_integer(int, type, type)
-        ctf_integer(int, code, code)
-        ctf_integer_network(__be32, info, info)
+	ctf_integer(unsigned int , vcpuID, vcpuID)
+        ctf_integer(ulong , cr3tmp, cr3tmp)
+	ctf_integer(unsigned long , sptmp, sptmp)
+	ctf_integer(unsigned long , iptmp, iptmp)
     )
 )
 

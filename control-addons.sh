@@ -6,7 +6,7 @@ then
         exit
 fi
 
-modules="lttng-probe-addons lttng-packet lttng-ttwu lttng-elv lttng-vhost"
+modules="lttng-probe-addons lttng-packet lttng-ttwu lttng-elv vcpu_enter_guest"
 
 virt_what=$(which virt-what)
 

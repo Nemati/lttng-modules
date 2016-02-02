@@ -8,12 +8,13 @@ ifneq ($(CONFIG_TRACEPOINTS),)
 ccflags-y += -I$(PWD)/addons
 
 obj-m += lttng-probe-addons.o
-obj-m += lttng-packet.o
+#obj-m += lttng-packet.o
 obj-m += lttng-ttwu.o
 obj-m += lttng-elv.o
 obj-m += lttng-vmsync-guest.o
 obj-m += lttng-vmsync-host.o
-obj-m += lttng-vhost.o
+obj-m += vcpu_enter_guest.o
+
 
 endif
 

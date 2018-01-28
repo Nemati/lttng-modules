@@ -6,8 +6,8 @@ then
         exit
 fi
 
-modules="lttng-probe-addons lttng-packet lttng-ttwu lttng-elv vcpu_enter_guest"
-
+modules="lttng-probe-addons vcpu_enter_guest lttng-elv lttng-ttwu"
+#lttng-mc lttng-elv lttng-ttwu
 virt_what=$(which virt-what)
 
 if [ -z "$virt_what" ]; then

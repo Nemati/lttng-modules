@@ -10,12 +10,14 @@ ccflags-y += -I$(PWD)/addons
 obj-m += lttng-probe-addons.o
 #obj-m += lttng-packet.o
 obj-m += lttng-ttwu.o
+obj-m += lttng-mc.o
 obj-m += lttng-elv.o
 obj-m += lttng-vmsync-guest.o
 obj-m += lttng-vmsync-host.o
 obj-m += vcpu_enter_guest.o
-
-
+#obj-m += emulator_pio_in_out.o
+obj-m += handle_tx_kick.o
+obj-m += handle_rx_kick.o
 endif
 
 else

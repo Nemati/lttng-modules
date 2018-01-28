@@ -229,6 +229,7 @@ int lttng_add_perf_counter_to_ctx(uint32_t type,
 		events[cpu] = wrapper_perf_event_create_kernel_counter(attr,
 					cpu, NULL, overflow_callback);
 		if (!events[cpu] || IS_ERR(events[cpu])) {
+//	printk("events[cpu]=%d",events[cpu]);
 			ret = -EINVAL;
 			goto counter_error;
 		}

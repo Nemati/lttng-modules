@@ -152,4 +152,3 @@ module_exit(lttng_addons_ttwu_exit);
 MODULE_LICENSE("GPL and additional rights");
 MODULE_AUTHOR("Francis Giraldeau <francis.giraldeau@gmail.com>");
 MODULE_DESCRIPTION("LTTng sched_ttwu event");
-

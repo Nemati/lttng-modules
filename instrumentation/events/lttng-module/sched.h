@@ -306,6 +306,7 @@ LTTNG_TRACEPOINT_EVENT_CODE(sched_process_fork,
 	TP_locvar(
 		pid_t vtids[LTTNG_MAX_PID_NS_LEVEL];
 		unsigned int ns_level;
+		
 	),
 
 	TP_code(
@@ -319,6 +320,8 @@ LTTNG_TRACEPOINT_EVENT_CODE(sched_process_fork,
 					LTTNG_MAX_PID_NS_LEVEL);
 			for (i = 0; i < tp_locvar->ns_level; i++)
 				tp_locvar->vtids[i] = child_pid->numbers[i].nr;
+			struct mm_struct *mm ;
+			
 		}
 	),
 
